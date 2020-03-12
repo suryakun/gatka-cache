@@ -1,6 +1,6 @@
 # Gatka
 
-**TODO: Add description**
+**Gatka cache service**
 
 ## Installation
 
@@ -19,3 +19,5 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/gatka](https://hexdocs.pm/gatka).
 
+# gatka-cache
+Cache service with elixir aims to support milbase-skeleton
