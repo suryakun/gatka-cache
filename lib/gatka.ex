@@ -22,10 +22,23 @@ defmodule Gatka do
   end
 
   def get_token(key) do
-    Cachex.get(:reset_token, key)
+    case Cachex.get(:reset_token, key) do
+      {:ok, token} -> {:ok, token}
+      {:ok, nil} -> {:error, nil}
+    end
   end
 
   def check_token(key) do
-    Cachex.exists?(:reset_token, key)
+    case Cachex.exists?(:reset_token, key) do
+      {:ok, true} -> {:ok, true}
+      {:ok, false} -> {:error, false}
+    end
+  end
+
+  def delete_token(key) do
+    case Cachex.del(:reset_token, key) do
+      {:ok, true} -> {:ok, key}
+      {:ok, nil} -> {:error, nil}
+    end
   end
 end
